@@ -2,14 +2,19 @@ package com.example.rickandmorty.api
 
 import com.google.gson.GsonBuilder
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
+import io.reactivex.rxjava3.core.Maybe
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
 import java.util.concurrent.TimeUnit
 
 interface IServerApi {
 
+
+    @GET("character")
+    fun getAllEpisodes() : Maybe<Any>
 
     companion object {
 
